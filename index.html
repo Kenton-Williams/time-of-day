@@ -61,6 +61,7 @@
 	</header>
     <main>
 	 <header><h3>This is an IT121 Assignment</h3></header>
+	 <h3 id="greeting"> Greeting goes here </h3>
 	 <p>This web page uses JavaScript to determine the current hour,
 		  and presents a different image, custom message, and color
 		   based on each of the following times of day:</p>
@@ -72,16 +73,56 @@
 				  <li>Night (11pm to 5am)</li>
 			  </ul> 
 		   </p>
-	  <img src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
+	  <img id="pic" src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
      </main>
     <footer>
-      <small>&copy; 2013, All Rights Reserved ~
+      <small>&copy; 2020 - <span>id="copyright">Copyright goes here</span> All Rights Reserved ~
       <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
       <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
       </small>
     </footer>
     <script>
-		alert('Hello');
+		//alert('Hello');
+		
+		let myDate = new Date();
+
+		let myHours = myDate.getHours();
+
+
+		
+		let myText = "";
+		let myColor = "";
+		let myPic = "";
+
+
+		if(myHours<12){ 
+
+			myText = "Good Mornig"; 
+			myColor = "Orange";
+			myPic = "images/morning.jpg";
+
+		}else{ 
+
+			myText = "Good Afternon"; 
+			myColor = "blue";
+			myPic = "images/afternoon.jpg";
+
+		} 
+
+		console.log(myText);
+
+		document.getElementById( 'greeting' ).innerHTML = myText;
+
+		document.getElemntById( 'greeting').style.color = myColor;
+
+		document.querySelector["html"]style.backgroundColor = myColor;
+
+		document.getElementById('pic').src = myPic;
+
+		let myCopyright = myDate.getFullYear();
+		document.getElemntById('copyright') .innerHTML = myCopyright; 
+
+		//Console.log(myCopyright); 
 	</script>	
 </body>
 </html>
