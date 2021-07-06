@@ -76,7 +76,7 @@
 	  <img id="pic" src="http://dummyimage.com/300x400" alt="Picture of Me!" class="flexible" />
      </main>
     <footer>
-      <small>&copy; 2020 - <span>id="copyright">Copyright goes here</span> All Rights Reserved ~
+      <small>&copy; 2020 - <span id="copyright">Copyright goes here</span> All Rights Reserved ~
       <a href="https://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
       <a href="https://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
       </small>
@@ -88,39 +88,56 @@
 
 		let myHours = myDate.getHours();
 
-
+		//THIS IS FOR TEST ONLY REMOVE THIS
+		//myHours= 3;
 		
 		let myText = "";
 		let myColor = "";
 		let myPic = "";
 
 
-		if(myHours<12){ 
+		if(myHours>= 5 && myHours < 12){ 
 
-			myText = "Good Mornig"; 
-			myColor = "Orange";
+			myText = "Good Morning"; 
+			myColor = "orange";
 			myPic = "images/morning.jpg";
+
+		}else if(myHours>= 12 && myHours < 18){
+		
+			myText = "Good Afternoon"; 
+			myColor = "red";
+			myPic = "images/afternoon.jpg";
+	
+		
+		
+		}else if(myHours>= 18 && myHours < 23){
+		
+			myText = "Good Evening"; 
+			myColor = "blue";
+			myPic = "images/evening.jpg";
+	
+
 
 		}else{ 
 
-			myText = "Good Afternon"; 
-			myColor = "blue";
-			myPic = "images/afternoon.jpg";
+			myText = "Good Night"; 
+			myColor = "purple";
+			myPic = "images/night.jpg";
 
 		} 
 
-		console.log(myText);
+		console.log(myHours);
 
 		document.getElementById( 'greeting' ).innerHTML = myText;
 
-		document.getElemntById( 'greeting').style.color = myColor;
+		document.getElementById( 'greeting' ).style.color = myColor;
 
-		document.querySelector["html"].style.backgroundColor = myColor;
+		document.querySelector("html").style.backgroundColor = myColor;
 
 		document.getElementById('pic').src = myPic;
 
 		let myCopyright = myDate.getFullYear();
-		document.getElemntById('copyright') .innerHTML = myCopyright; 
+		document.getElementById('copyright') .innerHTML = myCopyright; 
 
 		//Console.log(myCopyright); 
 	</script>	
